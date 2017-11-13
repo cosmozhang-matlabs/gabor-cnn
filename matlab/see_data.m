@@ -10,11 +10,12 @@ coors = parse_coor(cctotal);
 im = zeros(512,512);
 for j = 1:length(coors)
     coor = coors{j};
+    rsp = rsp_tpf(j);
     for i = 1:size(coor,1)
-        im(coor(i,1),coor(i,2)) = 1;
+        im(coor(i,1),coor(i,2)) = rsp;
     end
 end
-imshow(im);
+imagesc(im); axis equal;
 
 end
 
